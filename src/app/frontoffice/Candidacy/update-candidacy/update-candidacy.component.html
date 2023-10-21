@@ -1,0 +1,86 @@
+<!--form (ngSubmit)="onSubmit()" enctype="multipart/form-data"> 
+    <label>CV</label>
+      <input type="text" class="form-control" id="firstName" [(ngModel)]="candidacy.cv" name="firstName">
+    
+      <label>Cover Letter</label>
+      <input type="text" class="form-control" id="firstName"  required [(ngModel)]="candidacy.coverLetter" name="firstName">
+    
+      <label>Certificate</label>
+      <input type="text" class="form-control" id="firstName" required  [(ngModel)]="candidacy.certificate"  name="firstName">
+
+      <label>First Name</label>
+      <input type="text" class="form-control" id="firstName" required  [(ngModel)]="candidacy.firstName"  name="firstName">
+    
+      <label>Last Name</label>
+      <input type="text" class="form-control" id="lastName" required  [(ngModel)]="candidacy.lastName"  name="lastName">
+    
+      <label>Email</label>
+      <input type="text" class="form-control" id="Email" required  [(ngModel)]="candidacy.email"  name="Email">
+
+      
+      <label>Date of Candidacy</label>
+      <input type="date" [(ngModel)]="candidacy.dateCandidacy" name="dateCandidacy" required>
+    
+      <label>Telephone Number</label>
+      <input type="number" [(ngModel)]="candidacy.telephoneNumber"  name="telephoneNumber"required>
+    
+      <label>Address</label>
+      <input type="text" class="form-control" id="address" required  [(ngModel)]="candidacy.address"  name="address">
+    
+      <label>Postal Code</label>
+      <input type="number" [(ngModel)]="candidacy.postalCode" name="postalCode" required>
+    
+      <label>General Average</label>
+      <input type="number" [(ngModel)]="candidacy.moyenneGenerale" name="moyenneGenerale" required>
+    
+      <label>Score</label>
+      <input type="number" [(ngModel)]="candidacy.scoree" name="scoree" required>
+    
+      <label>Years of Experience</label>
+      <input type="number" [(ngModel)]="candidacy.anneeExperience" name="anneeExperience" required>
+    
+    <label>Profil</label>
+    <select [(ngModel)]="candidacy.profil" name="profil" required>
+        <option>ENSEIGNANT</option>
+        <option>ETUDIANT</option>  
+    </select>
+    
+    <label>Domain Candidacy</label>
+    <select [(ngModel)]="candidacy.domainCandidacy" name="domainCandidacy" required>
+        <option>INFORMATIQUE</option>
+        <option>MBA</option>  
+        <option>GENIE_CIVIL</option>
+        <option>ELECTROMECANIQUE</option>  
+    </select>
+    
+    <label>Status Candidacy</label>
+    <select [(ngModel)]="candidacy.statusCandidacy" name="statusCandidacy" required>
+        <option>EN_ATTENTE</option>
+        <option>ACCEPTEE</option>
+        <option>REFUSEE</option>
+       
+    </select>
+    
+    <label>Disponibilite</label>
+    <select [(ngModel)]="candidacy.disponibilite" name="disponibilite" required>
+        <option>IMMEDIATE</option>
+        <option>DANS_3_MOIS</option>  
+        <option>DANS_6_MOIS</option> 
+    </select>
+
+    <button type="submit" class="btn btn-success">update Candidacy</button>
+</form-->
+
+
+<h3>Update Candidacy</h3>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="statusCandidacy">Status:</label>
+    <input type="text" class="form-control" id="statusCandidacy" name="statusCandidacy" [(ngModel)]="candidacy.statusCandidacy" disabled>
+  </div>
+  
+  <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+  

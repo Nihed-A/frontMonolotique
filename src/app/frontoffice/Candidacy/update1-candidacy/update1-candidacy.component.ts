@@ -1,0 +1,37 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Candidacy } from 'src/app/models/CandidacyModule/Candidacy.module';
+import { CandidacyService } from '../../services/Candidacy/candidacy.service';
+
+
+@Component({
+  selector: 'app-update1-candidacy',
+  templateUrl: './update1-candidacy.component.html',
+  styleUrls: ['./update1-candidacy.component.css']
+})
+export class Update1CandidacyComponent implements OnInit {
+  idCandidacy!: number;
+  candidacy!: Candidacy;
+
+  constructor(private route: ActivatedRoute, private router: Router, private candidacyService: CandidacyService) { }
+
+  ngOnInit(): void {
+    this.candidacy = new Candidacy();
+
+    this.idCandidacy = this.route.snapshot.params['idCandidacy'];
+
+    this.candidacyService.getCandidacyById(this.idCandidacy)
+      .subscribe(data => {
+        console.log(data);
+        this.candidacy = data;
+      }, error => console.log(error));
+  }
+
+  onSubmit() {
+    this.candidacyService.updateCandidacyStatus(this.idCandidacy)
+      .subscribe(data => {
+        console.log(data);
+        this.router.navigate(['/listcandidacy']);
+      }, error => console.log(error));
+  }
+}

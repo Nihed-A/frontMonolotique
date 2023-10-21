@@ -1,0 +1,208 @@
+
+<!-- ======= Header ======= -->
+<div>
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Esprit Mobility</h1>
+        <!-- <img src="../assets/frontassets/img/espritback.jpg" class="img-fluid mb-3 mb-lg-0" alt=""> -->
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="get-a-quote" href="get-a-quote.html" routerLink="/signin">Sign In</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+</div>
+<!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+  <div class="container">
+    <div class="row gy-4 d-flex justify-content-between">
+      <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+        <h2 data-aos="fade-up">Your Lightning Fast Delivery Partner</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Facere distinctio molestiae nisi fugit tenetur repellat non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit</p>
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
+
+          <div class="col-lg-3 col-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Workers</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+      </div>
+
+      <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+        <img src="assets/img/hero-img.svg" class="img-fluid mb-3 mb-lg-0" alt="">
+      </div>
+
+    </div>  x
+  </div>
+</section><!-- End Hero Section -->
+
+
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">List of users</h6>
+        <p class="text-muted mb-3"> <code> </code></p>
+
+        <div class="table-responsive pt-3">
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Roles</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr *ngFor="let user of listUsers">
+              <td>{{ user.userName }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.roles[0].name }}</td>
+                <td><button type="button" class="btn btn-outline-danger"
+                       (click)="ActivateUser(user.id)" >Activate/Desactivate</button></td>
+
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-info">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span>Esprit</span>
+        </a>
+        <p>The Private Higher School of Engineering and Technology or ESPRIT, is a private
+          engineering school in Tunisia based in Ariana and accredited by the Ministry of Higher
+          Education and Scientific Research (approval N°2003-03)</p>
+        <div class="social-links d-flex mt-4">
+          <a href="https://twitter.com/Esprit_News" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/esprit.tn" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/esprit_ingenieur/" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/school/esprit_2/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Product Management</a></li>
+          <li><a href="#">Marketing</a></li>
+          <li><a href="#">Graphic Design</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Us</h4>
+        <p>
+          1, 2 rue André Ampère - 2083 -<br>
+          Pôle Technologique<br>
+          El Ghazala <br><br>
+          <strong>Phone:</strong> (+216) 70 250 000<br>
+          <strong>Email:</strong> contact@esprit.tn<br>
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Esprit</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/ -->
+      2022/2023
+    </div>
+  </div>
+
+</footer><!-- End Footer -->
+<!-- End Footer -->

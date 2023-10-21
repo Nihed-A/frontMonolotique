@@ -1,0 +1,51 @@
+
+<form (ngSubmit)="onSubmit()" enctype="multipart/form-data">        
+
+        <label>Title</label>
+    <input type="text" class="form-control" id="firstName" required [(ngModel)]="offer.title" name="firstName">
+    
+  
+
+      <label>Number of Candidates</label>
+      <input type="number" [(ngModel)]="offer.nbreCandidats" name="nbreCandidats" required>
+    
+    <label>Date Offre</label>
+    <input type="date" [(ngModel)]="offer.dateOffre" name="dateOffre" required>
+
+   
+    
+    <label>conditions</label>
+    <input type="text" class="form-control" id="firstName" required [(ngModel)]="offer.conditions" name="firstName">
+
+
+    <label>Profil</label>
+    <select [(ngModel)]="offer.profil" name="profil" required>
+        <option>ETUDIANT</option>
+        <option>ENSEIGNANT</option>
+    </select>
+    
+    <label>Destination</label>
+    <select [(ngModel)]="offer.destination" name="destination" required>
+        <option>FRANCE</option>
+        <option>ALLEMAGNE</option>  
+        <option>ETATS_UNIS</option>  
+        <option>CANADA</option>  
+    </select>
+
+    <label>Duration</label>
+    <select [(ngModel)]="offer.duration" name="duration" required>
+        <option>TROIS_MOIS</option>
+        <option>SIX_MOIS</option>  
+        <option>UN_AN</option>  
+        <option>DEUX_ANS</option>          
+    </select>
+
+    
+    <label>Advantages</label>
+    <select [(ngModel)]="offer.advantages" name="advantages" required>
+        <option>LOGEMENT</option>
+        <option>REPAS</option>  
+        <option>BILLET_AVION</option>  
+    </select>
+
+    <button type="submit">Update Offer</button>  </form>

@@ -1,0 +1,11 @@
+
+<h3>Update Candidacy</h3>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="statusCandidacy">Status:</label>
+    <input type="text" class="form-control" id="statusCandidacy" name="statusCandidacy" [(ngModel)]="candidacy.statusCandidacy" disabled>
+  </div>
+  
+  <button type="submit" class="btn btn-success">Update</button>
+</form>

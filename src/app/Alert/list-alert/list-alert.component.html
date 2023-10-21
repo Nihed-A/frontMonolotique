@@ -1,0 +1,92 @@
+
+<div class="card card-default ms-3">
+  <div class="card-header">
+    <h3 class="card-title">
+      <i class="fas fa-exclamation-triangle"></i>
+      My Alerts
+    </h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <div *ngFor="let alerts of alerts">
+      <div class="card card-danger">
+        <div class="card-header">
+          <h3 class="card-title">{{ alerts.alrtName }}</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+              title="Collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+            <div id="collapseOne" class="collapse show">
+                <div class="project-actions text-right me-2 mt-2">
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-warning">
+                      <i class="fas fa-trash"> </i>
+                      Delete
+                    </button>
+
+                    <div class="modal fade" id="modal-warning">
+                      <div class="modal-dialog">
+                        <div class="modal-content bg-secondary">
+                          <div class="modal-header">
+                            <h4 class="modal-title">Delete Alert</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p>You wont to delete this alert, if YES clic save changes, if NO clic close?</p>
+                          </div>
+                          <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal" (click)= "deleteAlert(alerts.idAlrt)">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          <dl>
+            <dt>Alert Kind</dt>
+            <dd>{{ alerts.alrtKind }}</dd>
+            <div *ngIf="alerts.alrtPhoneNumber!=null">
+                <dt>Alert Phone Number</dt>
+                <dd>{{ alerts.alrtPhoneNumber }}</dd>
+            </div>
+            <div *ngIf="alerts.alrtEmail!=null">
+                <dt>Alert Email</dt>
+                <dd>{{ alerts.alrtEmail }}</dd>
+            </div>
+
+            <dt>Alert Target</dt>
+            <dd>{{ alerts.alrtTarget }}</dd>
+            <div *ngIf="alerts.regionAlert!=null">
+                <dt>Alert Region</dt>
+                <dd>{{ alerts.regionAlert }}</dd>
+            </div>  
+            <div *ngIf="alerts.coutryAlert!=null">
+                <dt>Alert Country</dt>
+                <dd>{{ alerts.coutryAlert }}</dd>
+            </div>
+            <div *ngIf="alerts.universiteAlrt!=null">
+                <dt>Alert University</dt>
+                <dd>{{ alerts.universiteAlrt }}</dd>
+            </div>
+
+            <dt>Alert Creation Date</dt>
+            <dd>{{ alerts.alertCreationDate }}</dd>
+          </dl>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div>
+  </div>
+  <!-- /.card-body -->
+</div>

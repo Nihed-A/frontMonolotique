@@ -1,0 +1,229 @@
+<body>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    
+          <a href="index.html" class="logo d-flex align-items-center">
+          
+            <h1>Esprit Mobility</h1>
+            
+          </a>
+    
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">Offers</a></li>
+              <li><a href="services.html">Forum</a></li>
+              <li><a href="pricing.html">Alerts</a></li>
+              <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Drop Down 1</a></li>
+                      <li><a href="#">Deep Drop Down 2</a></li>
+                      <li><a href="#">Deep Drop Down 3</a></li>
+                      <li><a href="#">Deep Drop Down 4</a></li>
+                      <li><a href="#">Deep Drop Down 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a class="get-a-quote" href="get-a-quote.html">Sign In</a></li>
+            </ul>
+          </nav>
+    
+        </div>
+      </header>
+    
+      <section id="hero" class="hero d-flex align-items-center">
+    </section>
+
+
+<div class="col-12">
+    <div class=" rounded h-100 p-4">
+        <h3 class="mb-4">List Of result</h3>
+
+        <br>
+        <br>
+        <button (click)="exportToExcel()"  type="button" class="btn btn-success">Télécharger Excel</button>
+       
+        <br>
+        <br>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>  
+                      
+                        <th scope="col">Id</th>
+                        <th scope="col">Pl</th>
+                        <th scope="col">DataMining</th>
+                        <th scope="col">SpringBoot</th>
+                        <th scope="col">Angular</th>
+
+                        <th scope="col">Dotnet</th>
+                        <th scope="col">English</th>
+                        <th scope="col">French</th>
+                        <th scope="col">Math</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">General Average</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Student Speciality</th>
+                       
+                        
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <tr *ngFor="let result of results| paginate
+                        : {
+                            itemsPerPage: tableSize,
+                            currentPage: page,
+                            totalItems: count
+                          };
+                    let i = index ">
+
+                            <td>  {{result.idResult}}    </td>
+                            <td>      {{ result.pl}}    </td>
+                            <td>      {{ result.dataMining}}    </td>
+                            <td>      {{result.springBoot }}    </td> 
+                            <td>      {{ result.angular }}    </td>
+                            <td>      {{ result.dotnet }}    </td>
+                            <td>      {{ result.english }}    </td>
+                            <td>      {{ result.french }}    </td>
+                            <td>      {{ result.math}}    </td>
+                            <td>{{ result.date }}</td>
+                            <td>      {{ result.generalAverage }}    </td>
+                            <td>      {{ result.score }}    </td>
+                            <td>      {{ result.studentSpeciality}}    </td>
+                            
+                                 
+                          
+
+                            
+
+
+                            <!--td> <button class="bi bi-trash" (click)="deleteResult(result.idResult)" class="btn btn-danger"><span class="bi bi-trash">Delete</span></button>
+                          </td>
+                          <td> <button (click)="updateResult(result.idResult)" class="btn btn-info" style="margin-left: 10px"><span class='bi bi-pencil-square'>Edit</span></button>
+                          </td-->  
+                          <!--td><button (click)="affecterUserToResult(1, result.id)">Affecter l'utilisateur à une resultat</button>
+                          </td--> 
+                    </tr>
+                   
+                </tbody>
+
+            </table>
+           <div class="d-flex justify-content-center">
+                <pagination-controls
+                  previousLabel="Prev"
+                  nextLabel="Next"
+                  (pageChange)="onTableDataChange(results)"
+                >
+                </pagination-controls>
+              </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mt-3 text-center">
+          <p class="lead">
+              <a href="contact-us.html">Contact us</a>,
+              if you found not the right anwser or you have a other question?<br />
+          </p>
+        </div>
+        </div>
+            
+
+            </div>
+       
+        
+            <!-- ======= Footer ======= -->
+            <footer id="footer" class="footer">
+          
+                <div class="container">
+                  <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                      <a href="index.html" class="logo d-flex align-items-center">
+                        <span>Esprit</span>
+                      </a>
+                      <p>The Private Higher School of Engineering and Technology or ESPRIT, is a private
+                        engineering school in Tunisia based in Ariana and accredited by the Ministry of Higher
+                        Education and Scientific Research (approval N°2003-03)</p>
+                      <div class="social-links d-flex mt-4">
+                        <a href="https://twitter.com/Esprit_News" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.facebook.com/esprit.tn" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/esprit_ingenieur/" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/school/esprit_2/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                      </div>
+                    </div>
+            
+                    <div class="col-lg-2 col-6 footer-links">
+                      <h4>Useful Links</h4>
+                      <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                      </ul>
+                    </div>
+            
+                    <div class="col-lg-2 col-6 footer-links">
+                      <h4>Our Services</h4>
+                      <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                      </ul>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                      <h4>Contact Us</h4>
+                      <p>
+                        1, 2 rue André Ampère - 2083 -<br>
+                        Pôle Technologique<br>
+                        El Ghazala <br><br>
+                        <strong>Phone:</strong> (+216) 70 250 000<br>
+                        <strong>Email:</strong> contact@esprit.tn<br>
+                      </p>
+            
+                    </div>
+            
+                  </div>
+                </div>
+            
+                <div class="container mt-4">
+                  <div class="copyright">
+                    &copy; Copyright <strong><span>Esprit</span></strong>. All Rights Reserved
+                  </div>
+                  <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/ -->
+                    2022/2023
+                  </div>
+                </div>
+            
+              </footer><!-- End Footer -->
+              <!-- End Footer -->
+            
+              <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            
+              <div id="preloader"></div>
+          
+          
+            
+          </body>
+

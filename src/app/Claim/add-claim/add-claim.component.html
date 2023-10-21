@@ -1,0 +1,57 @@
+<div class="card-header">
+    <h3 class="card-title">
+      <i class="fas fa-bullhorn"></i>
+      New Claim
+    </h3>
+  </div>
+  
+  <form (ngSubmit)= "onSubmit()">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Subject</label>
+        <input
+          type="text"
+          class="form-control"
+          id="alertName"
+          [(ngModel)]="claim.subjectClm"
+          name="alertName"
+          placeholder="Give subject to claim"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="alertName"
+          [(ngModel)]="claim.descriptionClm"
+          name="alertName"
+          placeholder="short description of claim"
+        />
+      </div>
+      <div class="form-group">
+        <label>Claim Type</label>
+        <select
+          class="form-control"
+          data-dropdown-css-class="select2-danger"
+          style="width: 100%"
+          id="alertCountry"
+          [(ngModel)]="claim.typeClm"
+          name="alertCountry"
+        >
+          <option selected="selected">OTHER</option>
+          <option>TECHNICAL_FAILURE</option>
+          <option>DELAY</option>
+          <option>WRONG_INFORMATION</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-block bg-gradient-success btn-sm">
+        Create Claim
+      </button>
+      <button type="reset" class="btn btn-block bg-gradient-danger btn-sm">
+        Reset
+      </button>
+    </div>
+  
+  </form>

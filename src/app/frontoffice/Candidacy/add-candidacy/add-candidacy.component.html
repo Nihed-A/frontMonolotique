@@ -1,0 +1,268 @@
+<body>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    
+          <a href="index.html" class="logo d-flex align-items-center">
+          
+            <h1>Esprit Mobility</h1>
+            
+          </a>
+    
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">Offers</a></li>
+              <li><a href="services.html">Forum</a></li>
+              <li><a href="pricing.html">Alerts</a></li>
+              <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <ul>
+                      <li><a href="#">Deep Drop Down 1</a></li>
+                      <li><a href="#">Deep Drop Down 2</a></li>
+                      <li><a href="#">Deep Drop Down 3</a></li>
+                      <li><a href="#">Deep Drop Down 4</a></li>
+                      <li><a href="#">Deep Drop Down 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a class="get-a-quote" href="get-a-quote.html">Sign In</a></li>
+            </ul>
+          </nav>
+    
+        </div>
+      </header>
+    
+      <section id="hero" class="hero d-flex align-items-center">
+    </section>
+    
+    <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">   
+    
+    
+        <div style="background-image: linear-gradient(rgb(222, 222, 222), #f5f8f9);"> 
+            <div class="seven">
+                <h1 class="alert">Candidacy</h1>
+            </div>
+            <section class="content"  >
+    
+     <div class="col-md-6">
+    
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i class="fas fa-bullhorn"></i>
+              New Candidacy
+            </h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+    
+            <div class="form-group">
+                <label for="exampleInputEmail2">CV</label>
+                <input type="file" class="form-control" id="exampleInputEmail1"  placeholder="Enter Path For Candidacy" required [(ngModel)]="candidacy.cv" name="firstName">
+    
+            </div>
+              <div class="form-group">
+                  <label for="exampleInputEmail1">First Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail2"  placeholder="Enter firstName For candidacy" required [(ngModel)]="candidacy.firstName" name="firstName">
+    
+              </div>
+    
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Last Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail3"  placeholder="Enter lastName For candidacy" required [(ngModel)]="candidacy.lastName" name="firstName">
+  
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail4"  placeholder="Enter email For candidacy" required [(ngModel)]="candidacy.email" name="firstName">
+            </div>
+            
+            <div class="form-group">
+                <label for="exampleInputEmail3">Date Candidacy</label>
+                <input type="date" class="form-control" id="exampleInputEmail5"  placeholder="Enter date For candidacy" required [(ngModel)]="candidacy.dateCandidacy" name="firstName">
+    
+            </div>
+
+      
+            <div class="form-group">
+                <label for="exampleInputEmail6">telephone Number</label>
+                <input type="number" class="form-control" id="exampleInputEmail6"  placeholder="Enter telephone Number For candidacy" required [(ngModel)]="candidacy.telephoneNumber" name="firstName">
+    
+            </div>
+                    
+        <div class="form-group">
+            <label for="exampleInputEmail7">General Average</label>
+            <input type="number" class="form-control" id="exampleInputEmail7"  placeholder="Enter moyenneGenerale For candidacy" required [(ngModel)]="candidacy.moyenneGenerale" name="firstName">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail8">Score</label>
+            <input type="number" class="form-control" id="exampleInputEmail8"  placeholder="Enter score For candidacy" required [(ngModel)]="candidacy.scoree" name="firstName">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail9">Annee Experience</label>
+            <input type="number" class="form-control" id="exampleInputEmail9"  placeholder="Enter anneeExperience For candidacy" required [(ngModel)]="candidacy.anneeExperience" name="firstName">
+
+        </div>
+
+            
+        <!-- <div class="form-group">
+        <label>Profil</label>
+        <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;" [(ngModel)]="offers.profil" name="profil" required>
+            <option>ETUDIANT</option>
+            <option>ENSEIGNANT</option>
+        </select>
+    </div>
+--> 
+            
+    <div class="form-group">
+        <label>Profil</label>
+        <select  [(ngModel)]="candidacy.profil" name="profil"  required>
+            <option>ETUDIANT</option>
+            <option>ENSEIGNANT</option>
+        </select>
+    </div>
+
+        <div class="form-group">
+        <label>Domain Candidacy</label>
+        <select  [(ngModel)]="candidacy.domainCandidacy" name="domainCandidacy" required>
+            <option>INFORMATIQUE</option>
+            <option>MBA</option>  
+            <option>GENIE_CIVIL</option>
+            <option>ELECTROMECANIQUE</option>  
+        </select>
+    
+    </div>
+    
+    <!--div class="form-group">
+    <label>statusCandidacy</label>
+    <select  [(ngModel)]="candidacy.statusCandidacy" name="statusCandidacy" required>
+        <option>EN_ATTENTE</option>
+        <option>ACCEPTEE</option>
+        <option>REFUSEE</option>       
+    </select>
+    </div-->
+    
+    <div class="form-group">
+    <label>Disponibilite</label>
+        <select  [(ngModel)]="candidacy.disponibilite" name="disponibilite" required>
+            <option>IMMEDIATE</option>
+            <option>DANS_3_MOIS</option>  
+            <option>DANS_6_MOIS</option>  
+        </select>
+     </div>
+    
+    
+        <button type="submit" class="btn btn-block bg-gradient-success btn-sm">Save Candidacy</button>
+    
+    </div>
+    </div>
+
+    
+    
+                   
+    
+            
+    <div class="row">
+    <div class="col-12 mt-3 text-center">
+      <p class="lead">
+          <a href="contact-us.html">Contact us</a>,
+          if you found not the right anwser or you have a other question?<br />
+      </p>
+    </div>
+    </div>
+            </section>
+        </div>
+    
+        <!-- ======= Footer ======= -->
+        <footer id="footer" class="footer">
+      
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                  <a href="index.html" class="logo d-flex align-items-center">
+                    <span>Esprit</span>
+                  </a>
+                  <p>The Private Higher School of Engineering and Technology or ESPRIT, is a private
+                    engineering school in Tunisia based in Ariana and accredited by the Ministry of Higher
+                    Education and Scientific Research (approval N°2003-03)</p>
+                  <div class="social-links d-flex mt-4">
+                    <a href="https://twitter.com/Esprit_News" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.facebook.com/esprit.tn" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/esprit_ingenieur/" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/school/esprit_2/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+        
+                <div class="col-lg-2 col-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                  </ul>
+                </div>
+        
+                <div class="col-lg-2 col-6 footer-links">
+                  <h4>Our Services</h4>
+                  <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Product Management</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Graphic Design</a></li>
+                  </ul>
+                </div>
+        
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                  <h4>Contact Us</h4>
+                  <p>
+                    1, 2 rue André Ampère - 2083 -<br>
+                    Pôle Technologique<br>
+                    El Ghazala <br><br>
+                    <strong>Phone:</strong> (+216) 70 250 000<br>
+                    <strong>Email:</strong> contact@esprit.tn<br>
+                  </p>
+        
+                </div>
+        
+              </div>
+            </div>
+        
+            <div class="container mt-4">
+              <div class="copyright">
+                &copy; Copyright <strong><span>Esprit</span></strong>. All Rights Reserved
+              </div>
+              <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/ -->
+                2022/2023
+              </div>
+            </div>
+        
+          </footer><!-- End Footer -->
+          <!-- End Footer -->
+        
+          <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        
+          <div id="preloader"></div>
+      
+      </form>
+        
+      </body>

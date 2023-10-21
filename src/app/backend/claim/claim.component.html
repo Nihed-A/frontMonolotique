@@ -1,0 +1,81 @@
+            <div class="card card-default ms-3 me-3">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  All Claims
+                </h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div *ngFor="let claims of claims">
+                  <div class="card card-danger">
+                    <div class="card-header">
+                      <h3 class="card-title">{{ claims.subjectClm }}</h3>
+
+                      <div class="card-tools">
+                        <button
+                          type="button"
+                          class="btn btn-tool"
+                          data-card-widget="collapse"
+                          title="Collapse"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div id="collapseOne" class="collapse show">
+                        <div class="project-actions text-right me-2 mt-2">
+                          <button
+                            type="button"
+                            class="btn btn-danger btn-sm"
+                            data-toggle="modal"
+                            data-target="#modal-warning"
+                            (click)= "getId(claims.idClm)"
+                          >
+                            Respond
+                          </button>
+                        </div>
+                      </div>
+                      <dl>
+                        <dt>claim Description</dt>
+                        <dd>{{ claims.descriptionClm }}</dd>
+
+                        <dt>claim Type</dt>
+                        <dd>{{ claims.typeClm }}</dd>
+
+                        <dt>claim State</dt>
+                        <dd>{{ claims.stateClm }}</dd>
+
+                        <dt>claim Creation Date</dt>
+                        <dd>{{ claims.creationDateClm }}</dd>
+
+                        <dt *ngIf="claims.modificationDateClm != null">
+                          claim Modification Date
+                        </dt>
+                        <dd>{{ claims.modificationDateClm }}</dd>
+                      </dl>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+         
+
+        <div class="row">
+          <div class="col-12 mt-3 text-center">
+            <p class="lead">
+              <a href="contact-us.html">Contact us</a>, if you found not the
+              right anwser or you have a other question?<br />
+            </p>
+          </div>
+        </div>
+  <a
+    href="#"
+    class="scroll-top d-flex align-items-center justify-content-center"
+    ><i class="bi bi-arrow-up-short"></i
+>
+</a>
+

@@ -1,0 +1,12 @@
+
+<form (ngSubmit)="onSubmit()" enctype="multipart/form-data">        
+
+    <label>Description</label>
+<input type="text" class="form-control" id="firstName" required [(ngModel)]="commentaire.description" name="firstName">
+
+<label>Creation Date</label>
+<input type="date" [(ngModel)]="commentaire.creationDate" name="creationDate" required>
+
+ 
+
+<button type="submit">Update Commentaire</button>  </form>

@@ -1,0 +1,189 @@
+<div class="card-header">
+  <h3 class="card-title">
+    <i class="fas fa-bullhorn"></i>
+    New Alert
+  </h3>
+</div>
+
+<form (ngSubmit)= "onSubmit()">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Alert Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="alertName"
+        [(ngModel)]="alert.alrtName"
+        name="alertName"
+        placeholder="Enter Name For Alert"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Alert Type</label>
+      <div class="card-body table-responsive pad">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input
+              type="radio"
+              id="alertType1"
+              [(ngModel)]="alert.alrtKind"
+              name="alertType"
+              (click)="check1()"
+            />
+            SMS
+          </label>
+          <label class="btn btn-secondary">
+            <input 
+            type="radio" 
+            id="alertType"
+            [(ngModel)]="alert.alrtKind"
+            name="alertType" 
+            (click)="check2()" 
+            />
+            EMAIL
+          </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isSelected == 0">
+      <div class="form-group">
+        <label>Phone number</label>
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+          </div>
+          <input
+            type="text"
+            id="alertPhoneNumber"
+            [(ngModel)]="alert.alrtPhoneNumber"
+            name="alertPhoneNumber"
+            class="form-control"
+            data-inputmask="'mask': ['99999999']"
+            data-mask
+          />
+        </div>
+        
+      </div>
+    </div>
+    <div class="form-group" *ngIf="isSelected == 1">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        id="alertEmail"
+        [(ngModel)]="alert.alrtEmail"
+        name="alertEmail"
+        class="form-control"
+        id="exampleInputEmail1"
+        placeholder="Enter Name For Alert"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Alert Target</label>
+      <div class="card-body table-responsive pad">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn bg-olive active">
+            <input
+              type="radio"
+              id="alertTarget"
+              [(ngModel)]="alert.alrtTarget"
+              name="alertTarget" 
+              (click)="selectUniversity()"
+            />
+            University
+          </label>
+          <label class="btn bg-olive">
+            <input
+              type="radio"
+              id="alertTarget"
+              [(ngModel)]="alert.alrtTarget"
+              name="alertTarget" 
+              (click)="selectCountry()"
+            />
+            Country
+          </label>
+          <label class="btn bg-olive">
+            <input
+              type="radio"
+              id="alertTarget"
+              [(ngModel)]="alert.alrtTarget"
+              name="alertTarget" 
+              (click)="selectRegion()"
+            />
+            Region
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="selecte == 0">
+      <label>Country Alert</label>
+      <select
+        class="form-control select2 select2-danger"
+        data-dropdown-css-class="select2-danger"
+        style="width: 100%"
+        id="alertCountry"
+        [(ngModel)]="alert.coutryAlert"
+        name="alertCountry"
+      >
+        <option selected="selected">Alabama</option>
+        <option>FRANCE</option>
+        <option>ALLEMAGNE</option>
+        <option>Delaware</option>
+        <option>Tennessee</option>
+        <option>Texas</option>
+        <option>Washington</option>
+      </select>
+    </div>
+
+    <div class="form-group" *ngIf="selecte == 2">
+      <label>Region Alert</label>
+      <select
+        class="form-control select2 select2-danger"
+        data-dropdown-css-class="select2-danger"
+        style="width: 100%"
+        id="alertRegion"
+        [(ngModel)]="alert.regionAlert"
+        name="alertRegion"
+      >
+        <option selected="selected">Alabama</option>
+        <option>Alaska</option>
+        <option>California</option>
+        <option>Delaware</option>
+        <option>Tennessee</option>
+        <option>Texas</option>
+        <option>Washington</option>
+      </select>
+    </div>
+    <div *ngIf="selecte == 1">
+      <div class="form-group">
+        <label>University Alert</label>
+        <select
+          class="form-control select2 select2-danger"
+          data-dropdown-css-class="select2-danger"
+          style="width: 100%"
+          id="alertUniversity"
+          [(ngModel)]="alert.universiteAlrt"
+          name="alertUniversity"
+        >
+          <option selected="selected">Alabama</option>
+          <option>Alaska</option>
+          <option>California</option>
+          <option>Delaware</option>
+          <option>Tennessee</option>
+          <option>Texas</option>
+          <option>Washington</option>
+        </select>
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-block bg-gradient-success btn-sm">
+      Create Alert
+    </button>
+    <button type="reset" class="btn btn-block bg-gradient-danger btn-sm">
+      Reset
+    </button>
+  </div>
+
+</form>

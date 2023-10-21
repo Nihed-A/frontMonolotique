@@ -1,0 +1,74 @@
+
+<div class="col-12">
+    <div class=" rounded h-100 p-4">
+        <h6 class="mb-4">List Of Commentaires</h6>
+        <div class="table-responsive">
+            <table class="table ">
+                <thead>
+                    <tr>  
+                      
+                    <!--    <th scope="col">#</th>-->
+                        <th scope="col">Description</th>
+                        <th scope="col">Creation Date </th>
+                    
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <tr *ngFor="let Commentaire of commentaires | paginate
+                        : {
+                            itemsPerPage: tableSize,
+                            currentPage: page,
+                            totalItems: count
+                          };
+                    let i = index ">
+                            <td>      {{ Commentaire.description }}    </td>
+                            <td>      {{ Commentaire.creationDate }}    </td>
+
+                            <td> <button  class="bi bi-trash" (click)="deleteCommentaire(Commentaire.idComment)" class="btn btn-danger">delete<span class="bi bi-trash"></span></button>
+                          </td>
+                          <td> <button (click)="updateCommentaire(Commentaire.idComment)" class="btn btn-info" style="margin-left: 10px">edit<span class='bi bi-pencil-square'></span></button>
+                          </td>  
+                          <!-- <td><button (click)="affecterUserToEvent(1, event.id)">Affecter l'utilisateur à l'événement</button>
+                          </td> -->
+                    </tr>
+                   
+           
+                </tbody>
+
+            </table>
+
+            <div class="d-flex justify-content-center">
+                <pagination-controls
+                  previousLabel="Prev"
+                  nextLabel="Next"
+                  (pageChange)="onTableDataChange(commentaires)"
+                >
+                </pagination-controls>
+              </div>
+
+
+
+
+            <div class="d-flex justify-content-center">
+                <ul>
+                  
+                </ul>
+                <ul>
+                  
+                </ul>
+
+                <div class="footer">
+                    <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
+                        <br>
+                        Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+                        <br>
+                        Distibuted By: <a href="https://themewagon.com" target="_blank" title="Build Better UI, Faster">ThemeWagon</a>
+                      </p>
+                  </div>
+
+              </div>
+        </div>
+    </div>
+</div>

@@ -47,6 +47,10 @@ import { ForgetpasswordComponent } from './frontoffice/forgetpassword/forgetpass
 import { EditprofileComponent } from './frontoffice/editprofile/editprofile.component';
 import { UploadimageComponent } from './frontoffice/uploadimage/uploadimage.component';
 import { ListusersComponent } from './backoffice/listusers/listusers.component';
+import { AccommodationListComponent } from './Accomodation/ListAccomodation/accommodation-list/accommodation-list.component';
+import { AccommodationDetailComponent } from './accommodation-detail/accommodation-detail.component';
+import { AccommodationAddComponent } from './accommodation-add/accommodation-add.component';
+
 
 
 @NgModule({
@@ -89,6 +93,9 @@ import { ListusersComponent } from './backoffice/listusers/listusers.component';
     UploadimageComponent,
     ListusersComponent,
     UpdateOffersBackComponent,
+    AccommodationListComponent,
+    AccommodationAddComponent,
+    AccommodationDetailComponent,
   ],
   imports: [
     HttpClientModule,
@@ -98,7 +105,8 @@ import { ListusersComponent } from './backoffice/listusers/listusers.component';
     ClaimModule, 
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+  
   ],
   providers: [
 

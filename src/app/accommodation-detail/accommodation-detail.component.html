@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div *ngIf="accommodation">
+        <h2>{{ accommodation.title }}</h2>
+  
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ accommodation.title }}</h5>
+          <p class="card-text">Description: {{ accommodation.description }}</p>
+          <p class="card-text">Size: {{ accommodation.size }}</p>
+          <p class="card-text">Room Number: {{ accommodation.roomNumber }}</p>
+          <p class="card-text">Bathroom Number: {{ accommodation.bathroomNumber }}</p>
+          <p class="card-text">Country: {{ accommodation.country }}</p>
+          <p class="card-text">City: {{ accommodation.city }}</p>
+          <p class="card-text">Location: {{ accommodation.location }}</p>
+          <p class="card-text">Rules: {{ accommodation.rules }}</p>
+          <p class="card-text">Price: ${{ accommodation.price }}</p>
+          <p class="card-text">Bail: ${{ accommodation.bail  }}</p>
+          <p class="card-text">Likes: {{ accommodation.likes ? 'Yes' : 'No' }}</p>
+          <p class="card-text">Furniture: {{ accommodation.furniture ? 'Yes' : 'No' }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!accommodation">
+      <p>Accommodation not found.</p>
+    </div>
+  </div>
+  

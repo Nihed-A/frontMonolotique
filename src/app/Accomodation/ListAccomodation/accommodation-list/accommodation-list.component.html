@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <h2>Accommodation List</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let accommodation of accommodations">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ accommodation.title }}</h5>
+          <p class="card-text">Description: {{ accommodation.description }}</p>
+          <p class="card-text">Price: ${{ accommodation.price }}</p>
+          <div class="project-actions text-right me-2 mt-2">
+            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" [attr.data-target]="'#modal-warning-' + accommodation._id">
+              <i class="fas fa-trash"></i>
+              Delete
+            </button>
+            <a [routerLink]="['/accommodation', accommodation._id]" class="btn btn-primary details-button">
+              <i class="fas fa-info-circle"></i> Details
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Section -->
+<div *ngFor="let accommodation of accommodations">
+  <div class="modal fade" [id]="'modal-warning-' + accommodation._id">
+    <div class="modal-dialog">
+      <div class="modal-content bg-secondary">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Accommodation</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Do you want to delete this Accommodation? If YES, click "Save changes." If NO, click "Close".</p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-dark" data-dismiss="modal" (click)="deleteAccommodation(accommodation._id)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a [routerLink]="['/add-accommodation']" class="btn btn-primary details-button">
+  <i class="fas fa-info-circle"></i> Add Accommodation
+</a>
+
+

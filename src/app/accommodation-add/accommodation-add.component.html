@@ -1,0 +1,71 @@
+<div class="container">
+    <h2>Add Accommodation</h2>
+    
+
+    <div class="card-header">
+        <h3 class="card-title">
+          <i class="fas fa-bullhorn"></i>
+          New Accommodation
+        </h3>
+      </div>
+      
+      <form (ngSubmit)= "onSubmit()">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="exampleInputEmail1">title</label>
+          <input
+              type="text"
+              class="form-control"
+              id="alertName"
+              [(ngModel)]="newAccommodation.title"
+              name="alertName"
+              placeholder="Give subject to claim"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alertName"
+              [(ngModel)]="newAccommodation.description"
+              name="alertName"
+              placeholder="short description of accomodation"
+            />
+          </div>
+          <div class="form-group">
+            <label>room Number</label>
+            <input
+            type="text"
+            class="form-control"
+            id="alertName"
+            [(ngModel)]="newAccommodation.roomNumber"
+            name="alertName"
+            placeholder="roomNumber of accomodation"
+          />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">price</label>
+          <input
+              type="text"
+              class="form-control"
+              id="alertName"
+              [(ngModel)]="newAccommodation.price"
+              name="alertName"
+              placeholder="Give subject to price"
+            />
+          </div>
+      
+          <button type="submit" class="btn btn-block bg-gradient-success btn-sm">
+            Create accomodation
+          </button>
+          <button type="reset" class="btn btn-block bg-gradient-danger btn-sm">
+            Reset
+          </button>
+        </div>
+      
+      </form>
+    
+
+ </div>

@@ -34,6 +34,9 @@ import { ForgetpasswordComponent } from './frontoffice/forgetpassword/forgetpass
 import { EditprofileComponent } from './frontoffice/editprofile/editprofile.component';
 import { UploadimageComponent } from './frontoffice/uploadimage/uploadimage.component';
 import { ListusersComponent } from './backoffice/listusers/listusers.component';
+import { AccommodationListComponent } from './Accomodation/ListAccomodation/accommodation-list/accommodation-list.component';
+import { AccommodationDetailComponent } from './accommodation-detail/accommodation-detail.component'; 
+import { AccommodationAddComponent } from './accommodation-add/accommodation-add.component';
 
 
 const routes: Routes = [
@@ -100,6 +103,12 @@ const routes: Routes = [
   {path: 'editprofile', component: EditprofileComponent},
   {path: 'updateimage', component: UploadimageComponent},
   {path: 'listusers', component: ListusersComponent},
+  { path: 'list', component: AccommodationListComponent },
+ 
+  { path: 'accommodation/:id', component: AccommodationDetailComponent },
+  { path: 'add-accommodation', component: AccommodationAddComponent },
+
+
     {path:'', redirectTo:'home',pathMatch:'full'},
 ];
 
